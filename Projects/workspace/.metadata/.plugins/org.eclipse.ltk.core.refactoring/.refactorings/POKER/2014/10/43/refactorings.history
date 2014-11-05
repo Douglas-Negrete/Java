@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename method &apos;edu.rcc.hand.Hand.numberOfSameCards(...)&apos; to &apos;tieBreaker&apos;&#x0A;- Original project: &apos;POKER&apos;&#x0A;- Original element: &apos;edu.rcc.hand.Hand.numberOfSameCards(...)&apos;&#x0A;- Renamed element: &apos;edu.rcc.hand.Hand.tieBreaker(...)&apos;&#x0A;- Update references to refactored element" delegate="false" deprecate="false" description="Rename method &apos;numberOfSameCards&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.method" input="/src&lt;edu.rcc.hand{Hand.java[Hand~numberOfSameCards~QHand;" name="tieBreaker" references="true" stamp="1414217810175" version="1.0"/>
+</session>
