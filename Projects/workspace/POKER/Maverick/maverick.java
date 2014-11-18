@@ -1,0 +1,136 @@
+import java.util.ArrayList;
+
+import edu.rcc.deck.Card;
+import edu.rcc.deck.CardDeck;
+import edu.rcc.hand.Hand;
+
+
+public class maverick
+{
+	
+	public static void main(String[] args)
+	{
+		
+		CardDeck d = CardDeck.getStandardDeck();
+		d.shuffle();
+		
+		ArrayList<Card> maverick = new ArrayList<Card>();
+		ArrayList<Card> pat1 = new ArrayList<Card>();
+		ArrayList<Card> pat2 = new ArrayList<Card>();
+		ArrayList<Card> pat3 = new ArrayList<Card>();
+		ArrayList<Card> pat4 = new ArrayList<Card>();
+		ArrayList<Card> pat5 = new ArrayList<Card>();
+		
+		for(int i = 0; i <= 24; i++)
+		{
+
+			maverick.add(d.deal());
+			
+		}
+		
+		Hand hand1 = new Hand(maverick);
+		
+		changeSuit(maverick);
+		sort(maverick);
+		changeSuitBack(maverick);
+		
+		for(int i = 0; i < maverick.size(); i++)
+		{
+
+			System.out.println(maverick.get(i));
+			
+		}
+		
+		System.out.println();
+		System.out.println("-------------------------------------------------------");
+		System.out.println();
+		
+	}
+	
+	public static ArrayList<Card> sort(ArrayList<Card> c)
+	{
+		Card temp;
+
+		for (int i = 0; i < c.size() - 1; i++)
+		{
+			for (int j = i + 1; j < c.size(); j++)
+			{
+				if (Integer.parseInt((String)c.get(i).getSuit()) > Integer.parseInt((String)c.get(j).getSuit()))
+				{
+					temp = c.get(i);
+					c.set(i,c.get(j));
+					c.set(j, temp);
+				}
+			}
+		}
+
+		//for(int m = 0; m < c.size(); m++)
+		//{
+
+		//	System.out.println(c.get(m).getFace());
+
+		//}
+
+		return c;
+
+	}
+	
+	public static ArrayList<Card> changeSuitBack(ArrayList<Card> c)
+	{
+		/**
+		 * Heart, Spade, Club, Diamond
+		 */
+		
+		for(int i = 0; i < c.size(); i++)
+		{
+
+			if(c.get(i).getSuit() == "1")
+				c.get(i).setSuit("Hearts");
+			if(c.get(i).getSuit() == "2")
+				c.get(i).setSuit("Spades");
+			if(c.get(i).getSuit() == "3")
+				c.get(i).setSuit("Clubs");
+			if(c.get(i).getSuit() == "4")
+				c.get(i).setSuit("Diamonds");
+
+		}
+		
+		return c;
+		
+	}
+	
+	public static ArrayList<Card> changeSuit(ArrayList<Card> c)
+	{
+		/**
+		 * Heart, Spade, Club, Diamond
+		 */
+		
+		for(int i = 0; i < c.size(); i++)
+		{
+
+			if(c.get(i).getSuit() == "Hearts")
+				c.get(i).setSuit("1");
+			if(c.get(i).getSuit() == "Spades")
+				c.get(i).setSuit("2");
+			if(c.get(i).getSuit() == "Clubs")
+				c.get(i).setSuit("3");
+			if(c.get(i).getSuit() == "Diamonds")
+				c.get(i).setSuit("4");
+
+		}
+		
+		return c;
+		
+	}
+	
+	public static ArrayList<Card> isFourFlush(ArrayList<Card> c)
+	{
+		
+		
+		
+		
+		return c;
+		
+	}
+
+}

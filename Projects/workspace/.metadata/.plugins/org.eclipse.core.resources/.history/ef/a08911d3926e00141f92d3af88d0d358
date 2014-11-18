@@ -1,0 +1,72 @@
+import java.util.ArrayList;
+
+import edu.rcc.deck.Card;
+import edu.rcc.deck.CardDeck;
+import edu.rcc.hand.Hand;
+
+
+public class maverick
+{
+	
+	public static void main(String[] args)
+	{
+		
+		CardDeck d = CardDeck.getStandardDeck();
+		d.shuffle();
+		
+		ArrayList<Card> maverick = new ArrayList<Card>();
+		ArrayList<Card> pat1 = new ArrayList<Card>();
+		ArrayList<Card> pat2 = new ArrayList<Card>();
+		ArrayList<Card> pat3 = new ArrayList<Card>();
+		ArrayList<Card> pat4 = new ArrayList<Card>();
+		ArrayList<Card> pat5 = new ArrayList<Card>();
+		
+		for(int i = 0; i <= 24; i++)
+		{
+
+			maverick.add(d.deal());
+			
+		}
+		
+		Hand hand1 = new Hand(maverick);
+		
+		changeSuit(maverick);
+		
+		for(int i = 0; i < maverick.size(); i++)
+		{
+
+			System.out.println(maverick.get(i));
+			
+		}
+		
+		System.out.println();
+		System.out.println("-------------------------------------------------------");
+		System.out.println();
+		
+	}
+	
+	public static ArrayList<Card> changeSuit(ArrayList<Card> c)
+	{
+		/**
+		 * Heart, Spade, Club, Diamond
+		 */
+		
+		for(int i = 0; i < c.size(); i++)
+		{
+
+			if(c.get(i).getSuit() == "Hearts")
+				c.get(i).setSuit("1");
+			if(c.get(i).getSuit() == "Spades")
+				c.get(i).setSuit("2");
+			if(c.get(i).getSuit() == "Clubs")
+				c.get(i).setSuit("3");
+			if(c.get(i).getSuit() == "Diamonds")
+				c.get(i).setSuit("4");
+
+		}
+		
+		return c;
+		
+	}
+
+}

@@ -1,0 +1,42 @@
+import java.util.ArrayList;
+
+import edu.rcc.deck.Card;
+import edu.rcc.deck.CardDeck;
+import edu.rcc.hand.Hand;
+
+
+public class maverick
+{
+	
+	public static void main(String[] args)
+	{
+		
+		CardDeck d = CardDeck.getStandardDeck();
+		d.shuffle();
+		
+		ArrayList<Card> maverick = new ArrayList<Card>();
+		ArrayList<Card> pat1 = new ArrayList<Card>();
+		ArrayList<Card> pat2 = new ArrayList<Card>();
+		ArrayList<Card> pat3 = new ArrayList<Card>();
+		ArrayList<Card> pat4 = new ArrayList<Card>();
+		ArrayList<Card> pat5 = new ArrayList<Card>();
+		
+		for(int i = 0; i <= 24; i++)
+		{
+
+			maverick.add(d.deal());
+			
+		}
+		
+		Hand hand1 = new Hand(maverick);
+		
+		for(int i = 0; i <= maverick.size(); i++)
+		{
+
+			System.out.println(maverick.get(i));
+			
+		}
+		
+	}
+
+}
